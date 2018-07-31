@@ -63,10 +63,23 @@ public class SLList {
  		return size;
  	}
 
+ 	public void deleteFirst() {
+ 		if(size == 0) return;
+ 		if(size == 1) {
+ 			size = 0;
+ 			sentinel.next = null;
+ 			return;
+ 		}
+ 		size = size - 1;
+ 		sentinel.next = sentinel.next.next;
+ 	}
+
+
 	public static void main(String[] args) {
  		/* Creates a list of one integer, namely 10 */
  		SLList L = new SLList();
  		L.addLast(20);
+ 		L.deleteFirst();
  		System.out.println(L.size());
  	}
 }
