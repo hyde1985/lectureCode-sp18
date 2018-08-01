@@ -37,6 +37,23 @@ public class IntList {
 	public IntList addFirst(int i) {
 		IntList p = this;
 		p = new IntList(i, p);
+		return p;
+	}
+
+	public void addAdjacent() {
+		if(this.rest == null) return;
+		IntList s = this;
+		while(s.rest != null) {
+			if(s.first == s.rest.first) {
+				s.first = s.first * 2;
+				if(s.rest.rest != null) {
+					s.rest = s.rest.rest;
+				} else {
+
+				} 
+
+			}
+		}
 	}
 
 	public static void main(String[] args) {
