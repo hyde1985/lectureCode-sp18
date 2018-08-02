@@ -49,18 +49,22 @@ public class IntList {
 				if(s.rest.rest != null) {
 					s.rest = s.rest.rest;
 				} else {
-
+					s.rest = null;
+					break;
 				} 
 
+			} else {
+				s = s.rest;
 			}
 		}
 	}
 
 	public static void main(String[] args) {
 		IntList L = new IntList(15, null);
-		L = new IntList(10, L);
-		L = new IntList(5, L);
+		L = L.addFirst(10);
+		L = L.addFirst(10);
+		
 
-		System.out.println(L.get(100));
+		//System.out.println(L.get(100));
 	}
 } 
